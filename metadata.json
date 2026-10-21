@@ -1,0 +1,8 @@
+{
+  "name": "Remix معمل حدادة فهمي | Fahme Block Machines",
+  "description": "الموقع الرسمي لمعمل حدادة فهمي لصنع كابسات البلوك والخباطة المركزية وسايلوات وملحقاتها في كركوك - العراق.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

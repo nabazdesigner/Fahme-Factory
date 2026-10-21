@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'Rudaw';
+  src: url('/fonts/Rudaw-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 380px;
+  --breakpoint-3xl: 1920px;
+}
+
+/* Safe Area Inset Support for iPhone 13-18 (Notch, Dynamic Island, Home Bar) */
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+}
+
+.safe-pad-x {
+  padding-left: max(1rem, env(safe-area-inset-left, 0px)) !important;
+  padding-right: max(1rem, env(safe-area-inset-right, 0px)) !important;
+}
+
+.safe-pad-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-pad-bottom {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
+}
+
+/* Auto-hide or compact bars on iPhone horizontal landscape orientation (height <= 550px) */
+@media (orientation: landscape) and (max-height: 550px) {
+  .hide-on-mobile-landscape {
+    display: none !important;
+  }
+  
+  .compact-on-mobile-landscape {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+  }
+
+  .hero-mobile-landscape {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    min-height: auto !important;
+  }
+
+  .app-layout-pb {
+    padding-bottom: 0px !important;
+  }
+}
+
+/* Fix for vertical / portrait computer monitors (e.g. 1080x1920) so Hero doesn't stretch with giant empty voids */
+@media (orientation: portrait) {
+  #hero {
+    min-height: auto !important;
+  }
+}
+
+@layer base {
+  body {
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #040812;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+}
+
+/* Authentic Golden-Yellow from Logo (Clean, Sharp, NO Neon Glow Blurs) */
+.neon-title-yellow-hero {
+  color: #FFBE00;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.95),
+    0 4px 12px rgba(0, 0, 0, 0.85);
+}
+
+.neon-text-yellow {
+  color: #FFBE00;
+  text-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.neon-border-yellow {
+  border-color: #FFBE00;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.neon-btn-yellow {
+  background: #FFBE00;
+  color: #0B1728;
+  border: 1.5px solid #FFCD1A;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-btn-yellow:hover {
+  background: #FFCC00;
+  border-color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.neon-btn-yellow:active {
+  transform: scale(0.98);
+}
+
+.neon-divider-line-yellow {
+  background: linear-gradient(90deg, transparent, #FFBE00, transparent);
+}
+
+.neon-pill-badge {
+  border: 1px solid rgba(255, 190, 0, 0.4);
+  background: rgba(4, 15, 30, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 190, 0, 0.35);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 190, 0, 0.75);
+}
+
+/* Tap Highlight removal for mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
