@@ -15,9 +15,9 @@ export interface Product {
 }
 
 export interface GalleryItemView {
-  title: string;
   imageUrl: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 export interface GalleryItem {

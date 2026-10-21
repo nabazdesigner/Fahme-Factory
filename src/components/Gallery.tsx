@@ -40,9 +40,13 @@ export const Gallery: React.FC = () => {
     setCurrentViewIdx(0);
   };
 
-  // Get current machine's 5 views (or fallback to item itself)
+  // Get current machine's 5 views (inherits main machine title & description if not specified per view)
   const currentViews: GalleryItemView[] = selectedMachine?.views && selectedMachine.views.length > 0
-    ? selectedMachine.views
+    ? selectedMachine.views.map((v) => ({
+        imageUrl: v.imageUrl,
+        title: v.title || selectedMachine.title,
+        description: v.description || selectedMachine.description,
+      }))
     : selectedMachine
     ? [{ title: selectedMachine.title, imageUrl: selectedMachine.imageUrl, description: selectedMachine.description }]
     : [];
