@@ -96,7 +96,7 @@ export const About: React.FC = () => {
         {/* Lower Part: Factory Yard Image Card - Widened to fill screen on computer */}
         <div className="relative rounded-3xl overflow-hidden border border-yellow-500/30 shadow-[0_0_35px_rgba(255,214,0,0.18)] group min-h-[380px] sm:min-h-[440px] md:min-h-[480px] lg:min-h-[540px] xl:min-h-[600px] w-full">
           <img
-            src="/uploads/background.jpg"
+            src="public/uploads/background.jpg"
             alt="معمل حدادة فهمي"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-85 min-h-[380px] sm:min-h-[440px] md:min-h-[480px] lg:min-h-[540px] xl:min-h-[600px]"
           />
